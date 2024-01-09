@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: github-pull-request-2
+  name: github-pull-request-3
   description: pipeline build and deploy
   annotations:
     jira/project-key: <example-jira-project-key>
