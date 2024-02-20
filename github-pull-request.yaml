@@ -12,6 +12,7 @@ metadata:
 
   tags:
     - java
+    - secret
 
   links:
     - url: https://example.com/user
@@ -38,4 +39,4 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: team-sgsg
+  owner: harness_account_all_users
