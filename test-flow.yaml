@@ -33,7 +33,7 @@ spec:
           title: System
           type: string
           description: System of the component
-          ui:field: EntityPicker
+          ui:field: EntityFieldPicker
           ui:options:
             catalogFilter:
               kind: System
