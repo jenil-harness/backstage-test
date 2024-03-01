@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: createdeletesecret
+  name: createdeletesecret-1
   title: Create delete secret New
   description: An template for the scaffolder that creates a Django service
   tags:
