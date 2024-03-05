@@ -31,10 +31,6 @@ spec:
           type: string
           description: System of the component
           ui:field: EntityFieldPicker
-          ui:options:
-            catalogFilter:
-              kind: System
-            defaultKind: System
 
     - title: Choose a location
       required:
