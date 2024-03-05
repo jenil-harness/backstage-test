@@ -26,9 +26,6 @@ spec:
           type: string
           description: Owner of the component
           ui:field: OwnerPicker
-          ui:options:
-            catalogFilter:
-              kind: Group
         system:
           title: System
           type: string
