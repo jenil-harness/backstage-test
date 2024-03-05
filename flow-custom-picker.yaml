@@ -1,8 +1,8 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: yeoman-demo
-  title: Yeoman Test
+  name: custom-picker
+  title: Custom Picker
   description: Cookiecutter example
 spec:
   owner: backstage/techdocs-core
