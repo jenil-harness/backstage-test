@@ -7,6 +7,7 @@ metadata:
   tags:
     - django
     - harness
+    - secret
 spec:
   owner: debabrata.panigrahi@harness.io
   type: service
