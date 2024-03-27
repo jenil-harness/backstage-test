@@ -27,9 +27,9 @@ spec:
           description: Owner of the component
           ui:field: OwnerPicker
         system:
-          title: System
+          title: Name
           type: string
-          description: System of the component
+          description: Select Entity Name
           ui:field: EntityFieldPicker
 
     - title: Choose a location
