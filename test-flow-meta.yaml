@@ -27,9 +27,9 @@ spec:
           description: Owner of the component
           ui:field: OwnerPicker
         system:
-          title: System
+          title: Tags
           type: string
-          description: System of the component
+          description: Select a tag
           ui:field: EntityFieldPicker
           ui:displayField: metadata.tags
 
