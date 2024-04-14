@@ -4,7 +4,7 @@ metadata:
   name: "hello-world-app-plugins-readme"
   annotations:
     backstage.io/techdocs-ref: dir:.
-    backstage.io/source-location: url:https://github.com/Aashrit-Harness/hello-world-app/blob/master/
+    backstage.io/source-location: url:https://github.com/jenil-harness/backstage-test/blob/main/
 spec:
   type: service
   owner: "IDPAdmin"
