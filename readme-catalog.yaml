@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "hello-world-app-plugins-readme"
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/source-location: url:https://github.com/Aashrit-Harness/hello-world-app/blob/master/
+spec:
+  type: service
+  owner: "IDPAdmin"
+  lifecycle: experimental
