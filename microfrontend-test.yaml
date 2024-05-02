@@ -15,6 +15,6 @@ metadata:
     - secret
 
 spec:
-  type: microfrontend
+  type: micro
   lifecycle: experimental
   owner: harness_account_all_users
