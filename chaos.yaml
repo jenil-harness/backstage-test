@@ -4,7 +4,7 @@ metadata:
   name: chaos-project
   description: chaos module
   annotations:
-    harness.io/project-url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/module/chaos/orgs/default/projects/ynctest/experiments
+    harness.io/project-url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/chaos/orgs/default/projects/ynctest/experiments
 spec:
   type: service
   lifecycle: experimental
