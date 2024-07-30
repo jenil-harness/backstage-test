@@ -13,6 +13,7 @@ metadata:
   tags:
     - java
     - secret
+    - secret.t.t
 
   links:
     - url: https://example.com/user
