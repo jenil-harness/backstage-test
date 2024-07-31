@@ -7,6 +7,7 @@ metadata:
     harness.io/project-url: https://app.harness.io/ng/#/account/vpCkHKsDSxK9_KYfjCTMKA/cf/orgs/default/projects/FEATUREBUILDS/
   tags:
     - java
+    - new.tag.test
   
   links:
     - url: https://example.com/user
