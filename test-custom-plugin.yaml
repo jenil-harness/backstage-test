@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: example-custom-plugin
+  annotations:
+    'harness.io/custom-test-budget-id': XhxuDPP-Q_mimOA1jbxXTQ
+spec:
+  type: website
+  lifecycle: experimental
+  owner: guests
+  system: examples
+  providesApis: [example-grpc-api]
