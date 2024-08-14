@@ -11,7 +11,7 @@ metadata:
     harness.io/perspective: 'Test'
 
   tags:
-    - java
+    - java.t.new.12
     - secret
 
   links:
