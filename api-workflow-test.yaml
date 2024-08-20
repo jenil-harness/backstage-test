@@ -8,39 +8,24 @@ spec:
   owner: bhavya.sinha@harness.io
   type: service
   parameters:
-    properties:
-      - title: Custom
-        properties:
-          custom:
-            type: string
-            # Use `SelectFieldFromApi` to configure the select field for the entry.
-            ui:field: SelectFieldFromApi
-
-            ui:options:
-              title: My Dropdown title
-              description: My custom description for the component
-
-              # The Path on the Backstage API and the parameters to fetch the data for the dropdown
-              path: 'catalog/entity-facets'
-              params:
-                facet: 'kind'
-
-              # (Optional) Renders the provided text as a placeholder value into the select box.
-              placeholder: 'Select from options'
-
-              # This selects the array element from the API fetch response. It finds the array with the name kind
-              # under the facets object
-              arraySelector: 'facets.kind'
-
-              # (Optional) This selects the field in the array to use for the value of each select item. If its not specified
-              # it will use the value of the item directly.
-              valueSelector: 'value'
-              # (Optional) This selects the field in the array to use for the label of each select item.
-              labelSelector: 'value'
+    - title: Custom
+      properties:
+        custom:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: My Dropdown title
+            description: My custom description for the component
+            path: catalog/entity-facets
+            params:
+              facet: kind
+            placeholder: Select from options
+            arraySelector: facets.kind
+            valueSelector: value
+            labelSelector: value
   steps:
     - id: trigger
       name: Creating Your Django Service
       action: trigger:harness-custom-pipeline
       input:
-        url: 'https://stress.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/module/home/orgs/default/projects/projctidp/pipelines/citestpipeline/pipeline-studio?storeType=INLINE'
-        
+        url: https://stress.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/module/home/orgs/default/projects/projctidp/pipelines/citestpipeline/pipeline-studio?storeType=INLINE
