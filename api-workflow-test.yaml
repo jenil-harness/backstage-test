@@ -16,7 +16,7 @@ spec:
           ui:options:
             title: My Dropdown title
             description: My custom description for the component
-            path: catalog/entity-facets
+            path: proxy/api-workflow
             params:
               facet: kind
             placeholder: Select from options
