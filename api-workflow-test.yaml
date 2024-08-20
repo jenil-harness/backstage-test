@@ -6,7 +6,6 @@ metadata:
   description: An template for the scaffolder that creates a Django service
 spec:
   owner: bhavya.sinha@harness.io
-  type: service
   parameters:
     - title: Custom
       properties:
