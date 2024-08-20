@@ -43,9 +43,6 @@ spec:
       action: trigger:harness-custom-pipeline
       input:
         url: 'https://stress.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/module/home/orgs/default/projects/projctidp/pipelines/citestpipeline/pipeline-studio?storeType=INLINE'
-        inputset:
-          provider: ${{ parameters.provider }}
-        apikey: ${{ parameters.token }}
         showOutputVariables: true
   output:
     text:
