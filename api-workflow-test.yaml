@@ -43,16 +43,4 @@ spec:
       action: trigger:harness-custom-pipeline
       input:
         url: 'https://stress.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/module/home/orgs/default/projects/projctidp/pipelines/citestpipeline/pipeline-studio?storeType=INLINE'
-        showOutputVariables: true
-  output:
-    text:
-      - title: Output Variable
-        content: |
-          Output Variable Values: \n
-              **test2** is `${{ steps.trigger.output.test2 }}` \n
-              **test1** is `${{ steps.trigger.output.test1 }}` \n
-              **test1** with fqnPath is `${{ steps.trigger.output['pipeline.stages.testci.spec.execution.steps.Run_1.output.outputVariables.test1'] }}`
-    links:
-      - title: Pipeline Details
-        url: ${{ steps.trigger.output.PipelineUrl }}
         
