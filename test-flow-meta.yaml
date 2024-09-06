@@ -4,6 +4,7 @@ metadata:
   name: field-picker-tags
   title: Field Picker Tags
   description: Cookiecutter example
+  icon: ccm-solid
 spec:
   owner: backstage/techdocs-core
   type: service
