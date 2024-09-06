@@ -4,6 +4,7 @@ metadata:
   name: field-picker-demo
   title: Field Picker Demo
   description: Cookiecutter example
+  icon: argo
 spec:
   owner: backstage/techdocs-core
   type: service
