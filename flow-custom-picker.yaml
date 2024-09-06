@@ -4,6 +4,7 @@ metadata:
   name: custom-picker
   title: Custom Picker
   description: Cookiecutter example
+  icon: anchore-grype
   actionButton:
     intent: warning
     text: Run
