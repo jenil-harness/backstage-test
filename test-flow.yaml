@@ -4,6 +4,7 @@ metadata:
   name: yeoman-demo
   title: Yeoman Test
   description: Cookiecutter example
+  icon: service-elk
 spec:
   owner: backstage/techdocs-core
   type: service
