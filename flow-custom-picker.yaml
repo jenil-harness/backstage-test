@@ -5,7 +5,7 @@ metadata:
   title: Custom Picker
   description: Cookiecutter example
   actionButton:
-    intent: danger
+    intent: warning
     text: Run
 spec:
   owner: backstage/techdocs-core
