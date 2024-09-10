@@ -9,6 +9,7 @@ metadata:
     jira/token-type: Bearer # optional, used for Activity stream feed. If you are using Basic auth you can skip this.
     github.com/project-slug: backstage/backstage
     harness.io/perspective: 'Test'
+    harness.io/custom-test-budget-id: XhxuDPP-Q_mimOA1jbxXTQ
 
   tags:
     - microfrontend
