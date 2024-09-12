@@ -21,7 +21,7 @@ metadata:
     pagerduty.com/service-id: PNISOWY
 spec:
   type: service
-  system: delivery-really-really-really-really-long-long-name
+  system: delivery.really.really.really.really.long.long.name
   lifecycle: production
   owner: harness_account_all_users
   providesApis: 
