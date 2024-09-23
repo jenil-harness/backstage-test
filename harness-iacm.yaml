@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: harness-iacm
+  annotations:
+    harness.io/pipelines: |
+      Build: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Build_IDP_UI_App/pipeline-studio/?storeType=INLINE
+      Lint: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Lint/pipeline-studio
+      TypeCheck: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Typecheck/pipeline-studio
+    harness.io/services: |
+      IDP UI: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/cd/orgs/IDP_SAAS/projects/IDPSAASPROD/services/idpapp
+    harness.io/workspace-url: |
+      AWS Staging: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/module/iacm/orgs/default/projects/Platform_Demo/workspaces/AWS_Workspace_Staging/resources
+      Production: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/module/iacm/orgs/default/projects/Platform_Demo/workspaces/AWS_EC2/resources
+    grafana/dashboard-selector: "http://35.247.91.252/d/RpSjVqWMz/redis-memstore?orgId=1"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: harness_account_all_users
+  system: examples
+  providesApis: [example-grpc-api]
