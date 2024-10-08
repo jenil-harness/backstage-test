@@ -25,7 +25,7 @@ spec:
       name: Writing the email body
       action: trigger:harness-custom-pipeline
       input:
-        url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/module/idp-admin/orgs/default/projects/idpprojectsc/pipelines/demoerrortimeout/pipeline-studio/?storeType=INLINE&stageId=demoapproval&sectionId=EXECUTION
+        url: https://qa.harness.io/ng/account/rzjR8UyZTpOAd6SLDfdBuw/module/cd/orgs/default/projects/idptest/pipelines/workflowtimeout/pipeline-studio/?storeType=INLINE&stageId=demoapproval&sectionId=EXECUTION
         inputset: 
           emailbody: ${{ parameters.emailbody }}
         apikey: ${{ parameters.token }}
