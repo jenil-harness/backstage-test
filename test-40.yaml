@@ -1,0 +1,352 @@
+# Template to be used to launch on_prem_linux_provisioning pipeline
+# This template also serves as a survey for that pipeline
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: on_prem_linux_provisioning
+  title: on_prem_linux_provisioning
+  description: Creates virtual or physical Linux virtual machines
+  annotations:
+    backstage.io/techdocs-ref: url:https://ghe.dfdfdfdf.com/dfdfdf-ffdfdf/ansible-playbooks/tree/master
+spec:
+  owner: P2_APP00236588_HARNESS_TEST_USER_ONS
+  type: service
+  parameters:
+    - title: Survey Details
+      dependencies:
+        environment:
+          oneOf:
+            - properties:
+                environment:
+                  enum: 
+                    - Harness
+                hcsc_virtual:
+                  title: Is this a physical or virtual provisioning?
+                  type: string
+                  enum:
+                    - physical
+                    - virtual
+              dependencies:
+                hcsc_virtual:
+                  oneOf:
+                    - properties:
+                        hcsc_virtual:
+                          enum: 
+                            - virtual
+                        datacentername:
+                          title: DATACENTER NAME
+                          type: string
+                          default: '""'
+                        host_prov_cluster:
+                          title: CLUSTER NAME
+                          type: string
+                          default: '""'
+                        host_prov_datastore:
+                          title: DATASTORE 
+                          type: string 
+                          default: '""'
+                    - properties:
+                        hcsc_virtual:
+                          enum: 
+                            - physical
+                        ilo_ip:
+                          title: ILO IP
+                          type: string
+                          default: '""'
+                          description: The IP address (not FQDN or hostname) of the iLO
+                              
+            - properties:
+                environment:
+                  enum: 
+                    - Harness - Dev
+                hcsc_virtual:
+                  title: Virtual or Physical Provisioning?
+                  type: string
+                  enum:
+                    - virtual
+                    - physical
+                  
+              dependencies:
+                hcsc_virtual:
+                  oneOf:
+                    - properties:
+                        hcsc_virtual:
+                          enum: 
+                          - physical
+                        ilo_ip:
+                          title: ILO IP
+                          type: string
+                          default: '""'
+                          description: The IP address (not FQDN or hostname) of the iLO
+                    - properties:
+                        hcsc_virtual:
+                          enum: 
+                            - virtual
+                        datacentername:
+                          title: DATACENTER NAME
+                          type: string
+                          default: '""'
+                        host_prov_cluster:
+                          title: CLUSTER NAME
+                          type: string
+                          default: '""'
+                        host_prov_datastore:
+                          title: DATASTORE 
+                          type: string 
+                          default: '""'
+
+      required:
+        - verbosity
+        - environment
+        - hcsc_virtual
+        - lbomnumber
+        - selectedhost
+      properties:
+        environment:
+          title: ENV
+          type: string
+          enum:
+            - Harness
+            - Harness - Dev
+          default: Harness
+          description: "Harness Dev is used only to validate automation and has access to only Dev environments. Harness  should be used to run automation and has connectivity to all network layers"
+        hcsc_virtual:
+          title: Virtual or Physical Provisioning?
+          type: string
+          enum:
+            - physical
+            - virtual
+        verbosity:
+          title: VERBOSITY
+          type: string
+          enum:
+          - Normal
+          - Verbose
+          - MoreVerbose
+          - Debug
+          - ConnectionDebug
+          - WinRMDebug
+          description: Control the level of output ansible will produce as the playbook executes.
+          default: Normal
+        lbomnumber:
+          title: LBoM Number
+          type: string
+        selectedhost:
+            title: SHORT NAME OF THE HOST TO BUILD
+            type: string
+            description: Name of the host to build
+        extra_vars:
+            title: Any extra variables
+            type: string 
+            description: "List any extra vars here - example: \"start_num\":2 or \"hcsc_proxy\":\"null\" "
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
+steps:
+  - id: trigger
+    if: ${{ parameters.environment === "Harness - Dev" }}
+    name: Call a Harness pipeline using the Dev Delegate and pass the variables from above
+    action: trigger:harness-custom-pipeline
+    input:
+      url: "https://app.harness.io/ng/account/sdsdsdsds/all/orgs/default/projects/lit_linux_test/pipelines/on_prem_linux_provisioning/pipeline-studio?storeType=INLINE"
+      inputset:
+        verbosity: ${{ parameters.verbosity }}
+        # ansible_extra_vars: '{ "hcsc_virtual": "${{ paramters.hcsc_virtual }}", "selectedhost": "${{ parameters.selectedhost }}", "lbomnumber": "${{ parameters.lbomnumber }}", "datacentername": "${{ parameters.datacentername }}", "host_prov_cluster": "${{ parameters.host_prov_cluster }}","host_prov_datastore": "${{ parameters.host_prov_datastore }}", "ilo_ip": "${{ parameters.ilo_ip }}" }'
+        ansible_extra_vars: '{}'
+        extra_vars: "{${{ parameters.extra_vars }}}"
+      apikey: ${{ parameters.token }}
+  - id: trigger
+    if: ${{ parameters.environment === "Harness" }}
+    name: Call a Harness pipeline using the Prod Delegate and pass the variables from above
+    action: trigger:harness-custom-pipeline
+    input:
+      url: "https://app.harness.io/ng/account/sdsdsdsdsd/all/orgs/default/projects/lit_linux_test/pipelines/on_prem_linux_provisionin# Template to be used to launch on_prem_linux_provisioning pipeline
+# This template also serves as a survey for that pipeline
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: on_prem_linux_provisioning
+  title: on_prem_linux_provisioning
+  description: Creates virtual or physical Linux virtual machines
+  annotations:
+    backstage.io/techdocs-ref: url:https://ghe.ssdsds.com/dsdsd-sdsdsd/ansible-playbooks/tree/master
+spec:
+  owner: P2_APP00236588_HARNESS_TEST_USER_ONS
+  type: service
+  parameters:
+    - title: Survey Details
+      dependencies:
+        environment:
+          oneOf:
+            - properties:
+                environment:
+                  enum: 
+                    - Harness
+                hcsc_virtual:
+                  title: Is this a physical or virtual provisioning?
+                  type: string
+                  enum:
+                    - physical
+                    - virtual
+              dependencies:
+                hcsc_virtual:
+                  oneOf:
+                    - properties:
+                        hcsc_virtual:
+                          enum: 
+                            - virtual
+                        datacentername:
+                          title: DATACENTER NAME
+                          type: string
+                          default: '""'
+                        host_prov_cluster:
+                          title: CLUSTER NAME
+                          type: string
+                          default: '""'
+                        host_prov_datastore:
+                          title: DATASTORE 
+                          type: string 
+                          default: '""'
+                    - properties:
+                        hcsc_virtual:
+                          enum: 
+                            - physical
+                        ilo_ip:
+                          title: ILO IP
+                          type: string
+                          default: '""'
+                          description: The IP address (not FQDN or hostname) of the iLO
+                              
+            - properties:
+                environment:
+                  enum: 
+                    - Harness - Dev
+                hcsc_virtual:
+                  title: Virtual or Physical Provisioning?
+                  type: string
+                  enum:
+                    - virtual
+                    - physical
+                  
+              dependencies:
+                hcsc_virtual:
+                  oneOf:
+                    - properties:
+                        hcsc_virtual:
+                          enum: 
+                          - physical
+                        ilo_ip:
+                          title: ILO IP
+                          type: string
+                          default: '""'
+                          description: The IP address (not FQDN or hostname) of the iLO
+                    - properties:
+                        hcsc_virtual:
+                          enum: 
+                            - virtual
+                        datacentername:
+                          title: DATACENTER NAME
+                          type: string
+                          default: '""'
+                        host_prov_cluster:
+                          title: CLUSTER NAME
+                          type: string
+                          default: '""'
+                        host_prov_datastore:
+                          title: DATASTORE 
+                          type: string 
+                          default: '""'
+
+      required:
+        - verbosity
+        - environment
+        - hcsc_virtual
+        - lbomnumber
+        - selectedhost
+      properties:
+        environment:
+          title: ENV
+          type: string
+          enum:
+            - Harness
+            - Harness - Dev
+          default: Harness
+          description: "Harness Dev is used only to validate automation and has access to only Dev environments. Harness  should be used to run automation and has connectivity to all network layers"
+        hcsc_virtual:
+          title: Virtual or Physical Provisioning?
+          type: string
+          enum:
+            - physical
+            - virtual
+        verbosity:
+          title: VERBOSITY
+          type: string
+          enum:
+          - Normal
+          - Verbose
+          - MoreVerbose
+          - Debug
+          - ConnectionDebug
+          - WinRMDebug
+          description: Control the level of output ansible will produce as the playbook executes.
+          default: Normal
+        lbomnumber:
+          title: LBoM Number
+          type: string
+        selectedhost:
+            title: SHORT NAME OF THE HOST TO BUILD
+            type: string
+            description: Name of the host to build
+        extra_vars:
+            title: Any extra variables
+            type: string 
+            description: "List any extra vars here - example: \"start_num\":2 or \"hcsc_proxy\":\"null\" "
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
+steps:
+  - id: trigger
+    if: ${{ parameters.environment === "Harness - Dev" }}
+    name: Call a Harness pipeline using the Dev Delegate and pass the variables from above
+    action: trigger:harness-custom-pipeline
+    input:
+      url: "https://app.harness.io/ng/account/sdsdsdsdsdsd/all/orgs/default/projects/lit_linux_test/pipelines/on_prem_linux_provisioning/pipeline-studio?storeType=INLINE"
+      inputset:
+        verbosity: ${{ parameters.verbosity }}
+        # ansible_extra_vars: '{ "hcsc_virtual": "${{ paramters.hcsc_virtual }}", "selectedhost": "${{ parameters.selectedhost }}", "lbomnumber": "${{ parameters.lbomnumber }}", "datacentername": "${{ parameters.datacentername }}", "host_prov_cluster": "${{ parameters.host_prov_cluster }}","host_prov_datastore": "${{ parameters.host_prov_datastore }}", "ilo_ip": "${{ parameters.ilo_ip }}" }'
+        ansible_extra_vars: '{}'
+        extra_vars: "{${{ parameters.extra_vars }}}"
+      apikey: ${{ parameters.token }}
+  - id: trigger
+    if: ${{ parameters.environment === "Harness" }}
+    name: Call a Harness pipeline using the Prod Delegate and pass the variables from above
+    action: trigger:harness-custom-pipeline
+    input:
+      url: "https://app.harness.io/ng/account/sdsdsdsdsd/all/orgs/default/projects/lit_linux_test/pipelines/on_prem_linux_provisioning/pipeline-studio?storeType=INLINE"
+      inputset:
+        verbosity: ${{ parameters.verbosity }}
+        # ansible_extra_vars: '{ "hcsc_virtual": "${{ paramters.hcsc_virtual }}", "selectedhost": "${{ parameters.selectedhost }}", "lbomnumber": "${{ parameters.lbomnumber }}", "datacentername": "${{ parameters.datacentername }}", "host_prov_cluster": "${{ parameters.host_prov_cluster }}","host_prov_datastore": "${{ parameters.host_prov_datastore }}", "ilo_ip": "${{ parameters.ilo_ip }}" }'
+        ansible_extra_vars: '{}'
+        extra_vars: "{${{ parameters.extra_vars }}}"
+      apikey: ${{ parameters.token }}
+output:
+  links:
+    - title: Pipeline Details
+      url: ${{ steps.trigger.output.PipelineUrl }}
+g/pipeline-studio?storeType=INLINE"
+      inputset:
+        verbosity: ${{ parameters.verbosity }}
+        # ansible_extra_vars: '{ "hcsc_virtual": "${{ paramters.hcsc_virtual }}", "selectedhost": "${{ parameters.selectedhost }}", "lbomnumber": "${{ parameters.lbomnumber }}", "datacentername": "${{ parameters.datacentername }}", "host_prov_cluster": "${{ parameters.host_prov_cluster }}","host_prov_datastore": "${{ parameters.host_prov_datastore }}", "ilo_ip": "${{ parameters.ilo_ip }}" }'
+        ansible_extra_vars: '{}'
+        extra_vars: "{${{ parameters.extra_vars }}}"
+      apikey: ${{ parameters.token }}
+output:
+  links:
+    - title: Pipeline Details
+      url: ${{ steps.trigger.output.PipelineUrl }}
