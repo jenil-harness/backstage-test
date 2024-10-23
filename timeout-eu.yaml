@@ -1,0 +1,35 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: test-error-time-out
+  title: Test the error time out
+  description: A template to test the error time out
+spec:
+  owner: debabrata.panigrahi
+  type: service
+  parameters:
+    - title: Email Content
+      required:
+        - emailbody
+      properties:
+        emailbody:
+          title: Write the Content for your Email
+          type: string
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
+  steps:
+    - id: trigger
+      name: Writing the email body
+      action: trigger:harness-custom-pipeline
+      input:
+        url: https://idp-eu1-cluster.harness.io/ng/account/MzUzMzUyMWUtYWU4Yy00Mz/module/ci/orgs/default/projects/idptest/pipelines/timeoutemail/pipeline-studio/?storeType=INLINE
+        inputset: 
+          emailbody: ${{ parameters.emailbody }}
+        apikey: ${{ parameters.token }}
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}
