@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: test-error-time-out
+  name: test-error-time-out-eu-account
   title: Test the error time out
   description: A template to test the error time out
 spec:
