@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: statuspage-plugin
+  annotations:
+    statuspage.io/components: testpage:393lqnm4ns0z,txq18t49rdr1
+spec:
+  type: service
+  owner: "IDPAdmin"
+  lifecycle: experimental
