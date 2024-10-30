@@ -15,13 +15,13 @@ metadata:
   links:
     - url: https://example.com/user
       title: Examples Users
-      icon: user
+      icon: datadog
     - url: https://example.com/group
       title: Example Group
-      icon: group
+      icon: flipboard
     - url: https://example.com/cloud
       title: Link with Cloud Icon
-      icon: cloud
+      icon: testinglibrary
     - url: https://example.com/dashboard
       title: Dashboard
       icon: dashboard
