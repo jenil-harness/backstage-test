@@ -2,6 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: jira-test
+  namespace: idp_team
   description: pipeline build and deploy
   annotations:
     jira/project-key: IDP
